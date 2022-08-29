@@ -18,6 +18,8 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController passwordControler2=TextEditingController();
   TextEditingController emailControler=TextEditingController();
   TextEditingController nameControler=TextEditingController();
+  TextEditingController phoneControler=TextEditingController();
+
   @override
   Widget build(BuildContext context) {
 
@@ -74,7 +76,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   _buildSpacer(),
                   TextField(
-                    maxLength: 11,
+                    maxLength: 15,
+                    controller: phoneControler,
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
                       border: _buildOutlineInputBorder(),
@@ -146,6 +149,9 @@ class _LoginPageState extends State<LoginPage> {
                               if(EmailValidator.validate(emailControler.text)==false){
                                 final snackBar = _buildSnackBar('Lütfen geçerli bir e posta adresi giriniz !');
                                 ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                              }else if(!isValidPhone(emailControler.text)){
+                                final snackBar = _buildSnackBar('Lütfen geçerli bir telefon numarası giriniz !');
+                                ScaffoldMessenger.of(context).showSnackBar(snackBar);
                               }else{
                                 _navLogPage(context);
                               }
@@ -193,8 +199,10 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius: BorderRadius.circular(60.0),
                       );
   }
-
-
+  bool isValidPhone(String email){
+    RegExp _regExp = RegExp(r'[0-9]$');
+    return _regExp.hasMatch(email);
+  }
 }
 
 
