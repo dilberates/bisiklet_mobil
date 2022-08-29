@@ -46,11 +46,13 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                  _buildSpacer(),
                  TextField(
+                   maxLength: 32,
                    controller: nameControler,
                       decoration: InputDecoration(
                           border: _buildOutlineInputBorder(),
                         hintText: LanguageItem.regName,
                         suffixText: '*',
+
                         prefixIcon: Icon(
                           Icons.person_outline
                         )
@@ -58,6 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   _buildSpacer(),
                   TextField(
+                    maxLength: 30,
                     controller: emailControler,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
@@ -71,6 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   _buildSpacer(),
                   TextField(
+                    maxLength: 11,
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
                       border: _buildOutlineInputBorder(),
@@ -83,6 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                   _buildSpacer(),
                   TextField(
                     controller: passwordControler,
+                    maxLength: 12,
                     obscureText: _isObscure,
                     decoration: InputDecoration(
                       border: _buildOutlineInputBorder(),
@@ -104,6 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                   TextField(
                     controller: passwordControler2,
                     obscureText: _isObscure2,
+                    maxLength: 12,
                     keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
                       border: _buildOutlineInputBorder(),
