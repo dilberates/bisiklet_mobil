@@ -1,5 +1,5 @@
 import 'package:bisiklet_mobil/Constants/myColors.dart';
-import 'package:bisiklet_mobil/Pages/loginPage.dart';
+import 'package:bisiklet_mobil/Pages/regPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
