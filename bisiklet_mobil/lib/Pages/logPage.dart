@@ -1,4 +1,5 @@
 import 'package:bisiklet_mobil/Constants/languageItem.dart';
+import 'package:bisiklet_mobil/Pages/mainPage.dart';
 import 'package:bisiklet_mobil/Pages/regPage.dart';
 import 'package:flutter/material.dart';
 
@@ -42,11 +43,12 @@ class _LogPageState extends State<LogPage> {
             ),
               _buildSpacer(),
              Container(
-                margin: EdgeInsets.all(10),
-                width: 300,
+                margin: EdgeInsets.all(30),
                 height: 50,
                 child: ElevatedButton(
                     onPressed:(){
+                         Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
+                         MainPage()));
                       },
                     child: Text(LanguageItem.regBtnTxt)
                 ),
