@@ -28,11 +28,8 @@ class _LogPageState extends State<LogPage> {
           reverse: true,
           children:<Widget> [
             LogoImageWidget(),
-            _buildSpacer(),
             EmailTextFieldWidget(emailControler: emailControler, buildMet: _buildOutlineInputBorder()),
-            _buildSpacer(),
             PasswordTextFieldWidget(passwordControler: passwordControler, buildMet: _buildOutlineInputBorder(), isObscure: _isObscure),
-            _buildSpacer(),
             Align(
               alignment: Alignment.bottomRight,
               child: TextButton(
@@ -41,7 +38,6 @@ class _LogPageState extends State<LogPage> {
                 child: Text(LanguageItem.forgotPassword),
               ),
             ),
-              _buildSpacer(),
              Container(
                 margin: EdgeInsets.all(30),
                 height: 50,

@@ -39,33 +39,26 @@ class _RegPageState extends State<RegPage> {
               ]
         ),
       body:  Container(
-              margin: EdgeInsets.only(right: 15,left:15,bottom:30,top: 10),
+              margin: EdgeInsets.only(right: 15,left:15),
               padding:EdgeInsets.only(top: 10,bottom: 10),
                   child: ListView(
                     shrinkWrap: true,
                         reverse: true,
                         children: <Widget>[
                           LogoImageWidget(),
-                         _buildSpacer(),
                           NameTextFieldWidget(nameControler: nameControler,buildMet: _buildOutlineInputBorder()),
-                          _buildSpacer(),
                           EmailTextFieldWidget(emailControler: emailControler, buildMet: _buildOutlineInputBorder()),
-                          _buildSpacer(),
                           PhoneTextFieldWidget(phoneControler: phoneControler, buildMet: _buildOutlineInputBorder()),
-                          _buildSpacer(),
                           PasswordTextFieldWidget(passwordControler: passwordControler, buildMet: _buildOutlineInputBorder(), isObscure: _isObscure),
-                          _buildSpacer(),
                           PasswordAgainTextFieldWidget(passwordAgainControler: passwordControler2, buildMet: _buildOutlineInputBorder(), isObscure2: _isObscure2),
-                          _buildSpacer(),
                           TextButton(
                               onPressed: () {
                                 _navLogPage(context);
                               },
                               child: Text(LanguageItem.loginUser),
                           ),
-                          _buildSpacer(),
                           Container(
-                              margin: EdgeInsets.all(30),
+                              margin: EdgeInsets.all(10),
                               height: 50,
                               child: ElevatedButton(
                                     onPressed:(){
@@ -139,7 +132,7 @@ class LogoImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(80),
+      padding: EdgeInsets.all(50),
       child: const Image(image:
       AssetImage('images/cropped-logo-293x71.png'),
       ),
