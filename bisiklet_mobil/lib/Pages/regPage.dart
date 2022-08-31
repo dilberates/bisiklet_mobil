@@ -7,14 +7,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegPage extends StatefulWidget {
+  const RegPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegPage> createState() => _RegPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegPageState extends State<RegPage> {
   bool _isObscure=true;
   bool _isObscure2=true;
   TextEditingController passwordControler=TextEditingController();
@@ -115,6 +115,8 @@ class _LoginPageState extends State<LoginPage> {
       builder: (context) => LogPage(),
     ));
   }
+
+
 
   Spacer _buildSpacer() => Spacer();
 
