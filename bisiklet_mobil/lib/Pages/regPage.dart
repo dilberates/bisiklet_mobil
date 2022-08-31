@@ -65,8 +65,7 @@ class _RegPageState extends State<RegPage> {
                           ),
                           _buildSpacer(),
                           Container(
-                              margin: EdgeInsets.all(10),
-                              width: 300,
+                              margin: EdgeInsets.all(30),
                               height: 50,
                               child: ElevatedButton(
                                     onPressed:(){

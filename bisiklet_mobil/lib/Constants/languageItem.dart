@@ -12,7 +12,7 @@ class LanguageItem{
   static const String checkEmail="Lütfen geçerli bir e posta adresi giriniz !";
   static const String checkPhone="Lütfen geçerli bir telefon numarası giriniz !";
   static const String checkEmpty="Zorunlu(*) alanlar boş bırakılmamalı !";
-  static const String regBtnTxt="KAYIT OL";
+  static const String regBtnTxt="KAYIT";
   static const String logBtnTxt="GİRİŞ";
   static const String snackBarTxt="TAMAM";
   static const String forgotPassword="Şifreni mi unuttun ?";
