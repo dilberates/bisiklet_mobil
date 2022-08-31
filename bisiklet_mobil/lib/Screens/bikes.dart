@@ -6,7 +6,7 @@ class BikesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('BikePage')),
+      body: Center(child: Text('Bike Page')),
 
     );
   }
