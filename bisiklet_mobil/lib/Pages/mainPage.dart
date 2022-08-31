@@ -16,7 +16,7 @@ class _MainPageState extends State<MainPage> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
        appBarTheme: AppBarTheme(
-         color: MyColors.error
+         color: Colors.transparent
        ),
         ),
       home: MotionTabBarPage(),
