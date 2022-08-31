@@ -1,7 +1,9 @@
 import 'package:bisiklet_mobil/Constants/languageItem.dart';
+import 'package:bisiklet_mobil/Constants/mask_phone.dart';
 import 'package:bisiklet_mobil/Constants/myColors.dart';
 import 'package:bisiklet_mobil/Pages/logPage.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -70,22 +72,22 @@ class _LoginPageState extends State<LoginPage> {
                                     onPressed:(){
                                       if(nameControler.text.isNotEmpty && emailControler.text.isNotEmpty && passwordControler.text.isNotEmpty && passwordControler2.text.isNotEmpty){
                                         if(EmailValidator.validate(emailControler.text)==false){
-                                          final snackBar = _buildSnackBar('Lütfen geçerli bir e posta adresi giriniz !');
+                                          final snackBar = _buildSnackBar(LanguageItem.checkEmail);
                                           ScaffoldMessenger.of(context).showSnackBar(snackBar);
                                         }else if(!isValidPhone(phoneControler.text)){
-                                          final snackBar = _buildSnackBar('Lütfen geçerli bir telefon numarası giriniz !');
+                                          final snackBar = _buildSnackBar(LanguageItem.checkPhone);
                                           ScaffoldMessenger.of(context).showSnackBar(snackBar);
                                         }else{
                                           _navLogPage(context);
                                         }
                                       }
                                       else{
-                                        final snackBar = _buildSnackBar('Zorunlu(*) alanlar boş bırakılmamalı !');
+                                        final snackBar = _buildSnackBar(LanguageItem.checkEmpty);
                                         ScaffoldMessenger.of(context).showSnackBar(snackBar);
                                       }
 
                                     },
-                                    child: Text('KAYIT OL')
+                                    child: Text(LanguageItem.regBtnTxt)
                               ),
                             ),
 
@@ -101,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                             backgroundColor: MyColors.error,
                             action: SnackBarAction(
                               textColor: MyColors.white,
-                              label: 'Tamam',
+                              label: LanguageItem.snackBarTxt,
                               onPressed: () {
                               },
                             ),
@@ -123,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   bool isValidPhone(String email){
-    RegExp _regExp = RegExp(r'^[0-9]{10}$');
+    RegExp _regExp = RegExp(r'^[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$');
     return _regExp.hasMatch(email);
   }
 }
@@ -209,6 +211,9 @@ class PhoneTextFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      inputFormatters: [
+        MaskPhone.maskFormatter
+      ],
       maxLength: 15,
       controller: phoneControler,
       keyboardType: TextInputType.phone,
@@ -225,8 +230,8 @@ class PhoneTextFieldWidget extends StatelessWidget {
 class PasswordTextFieldWidget extends StatefulWidget {
   final TextEditingController passwordControler;
   final InputBorder buildMet;
-  final bool isObscure;
-  const PasswordTextFieldWidget ({
+   bool isObscure;
+  PasswordTextFieldWidget ({
     Key? key,
     required this.passwordControler,
     required this.buildMet,
@@ -254,7 +259,7 @@ class _PasswordTextFieldWidgetState extends State<PasswordTextFieldWidget> {
               ),
               onPressed: (){
                 setState((){
-                  widget.isObscure!=!widget.isObscure;
+                  widget.isObscure=!widget.isObscure;
                 });
               }
           )
@@ -265,8 +270,8 @@ class _PasswordTextFieldWidgetState extends State<PasswordTextFieldWidget> {
 class PasswordAgainTextFieldWidget extends StatefulWidget {
   final TextEditingController passwordAgainControler;
   final InputBorder buildMet;
-  final bool isObscure2;
-  const PasswordAgainTextFieldWidget ({
+  bool isObscure2;
+   PasswordAgainTextFieldWidget ({
     Key? key,
     required this.passwordAgainControler,
     required this.buildMet,
@@ -295,7 +300,7 @@ class _PasswordAgainTextFieldWidgetState extends State<PasswordAgainTextFieldWid
               ),
               onPressed: (){
                 setState((){
-                  widget.isObscure2!=!widget.isObscure2;
+                  widget.isObscure2=!widget.isObscure2;
                 });
               }
           )
