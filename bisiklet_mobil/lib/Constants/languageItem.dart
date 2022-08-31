@@ -8,6 +8,7 @@ class LanguageItem{
   static const String regPassword="Şifre";
   static const String regPassswordAgain="Şifre Tekrar";
   static const String loginAppTitle="GİRİŞ";
+  static const String loginUser="'Zaten bir hesabınız var mı ?'";
 
 
 }
